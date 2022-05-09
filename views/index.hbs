@@ -1,0 +1,126 @@
+<!-- The forms of the word area -->
+<div class="content-area">
+
+    <!--    Left container flex wrapper    -->
+    <div class="content-container left-container">
+
+        <header class="header-left">
+            <div class="header-container">
+                <h1>Come</h1>
+            </div>
+        </header> 
+
+        <div class="trans-area">
+            <div class="trans-area__word">
+                <h2>{{viewObject.english.word}}</h2>
+            </div>
+
+            <div class="trans-area__button">
+                <a href="#"><img class="main-word-btn" src="/img/main-word-button.png" alt="main-word-btn"></a>
+            </div>
+        </div>
+
+        <div class="transcription-area">
+            {{#if viewObject.english.phonetics.text.us}}
+                <div class="usa-transcription">
+                    <p>{{viewObject.english.phonetics.text.us}}</p>
+                </div>
+            {{/if}}
+
+            {{#if viewObject.english.phonetics.text.unknown.[0]}}
+                {{#if viewObject.english.phonetics.text.us}}
+                {{else}}
+                    <div class="usa-transcription">
+                        <p>{{viewObject.english.phonetics.text.unknown.[0]}}</p>
+                    </div>
+                {{/if}}
+            {{/if}}
+
+            {{#if viewObject.english.phonetics.text.uk}}
+            <div class="brit-transcription">
+                <p>{{viewObject.english.phonetics.text.uk}}</p>
+            </div>
+            {{/if}}
+
+            {{#if viewObject.english.phonetics.text.unknown.[1]}}
+                {{#if viewObject.english.phonetics.text.uk}}
+                {{else}}
+                    <div class="brit-transcription">
+                        <p>{{viewObject.english.phonetics.text.unknown.[1]}}</p>
+                    </div>
+                {{/if}}
+            {{/if}}
+        </div>
+
+        <div class="translate-line">
+            <p>{{viewObject.russian.word}}</p>
+        </div>
+
+        {{#if verbForm}}
+        <div class="word-forms-area">
+            <h3>Формы слова</h3>
+            <p>I/You/We/They: <span>{{viewObject.english.word}}</span></p>
+            <p>He/She/It: <span>{{viewObject.english.forms.thirdPerson}}</span></p>
+            <p>ing ф. (present participle): <span>{{viewObject.english.forms.ing}}</span></p>
+            <p>2 ф. (past tense): <span>{{viewObject.english.forms.second}}</span></p>
+            <p>3 ф. (past participle): <span>{{viewObject.english.forms.third}}</span></p>
+        </div>
+        {{/if}}
+
+    {{#each viewObject.russian.meanings}}
+    <div class="word-meaning-area word-meaning-area_close">
+        <h3>{{this.partOfSpeech}}</h3>
+        <ul id="verbMeanings" class="dropdown-block">
+
+            {{#each this.definitions}}
+            <li>
+                <p>{{this}}</p>
+            </li>
+            {{/each}}
+
+        </ul>
+        <a href="#" id="showMoreMeaningsVerb" class="dropdown-button">Ещё 60 вариантов</a>
+    </div>
+    {{/each}}
+
+    {{!-- {{#else}}
+    <h2>No words</h2>
+    {{/else}} --}}
+    </div>
+
+                <!-- Right container flex wrapper -->
+    <div class="content-container right-container">
+
+        <header class="header-right"> 
+        </header> 
+
+                <!-- refactor (dl, dt, dd)-->
+        <div class="collocation-area">
+            <h3>Коллокации</h3>
+            <ul class="dropdown-block">
+                {{#each viewObject.english.examples}}
+                    <li><p><span>{{.}} - </span></p></li>
+                {{/each}}
+            </ul>
+            <a href="#" class="dropdown-button">Ещё 20 вариантов</a>
+        </div>
+
+        <div class="video-area">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/NcRifDitRnU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <div class="random-word-container">
+        <div class="random-word">
+            <a class="random-word__link" href="#" onClick="document.getElementById('search_input').value = 'car'">car</a>
+            <a class="random-word__link" href="#" onClick="document.getElementById('search_input').value = 'cat'">cat</a>
+            <a class="random-word__link" href="#" onClick="document.getElementById('search_input').value = 'container'">container</a>
+        </div>
+    </div>
+
+     <form method="post" class="input-area" action="/">
+        <button type="submit" class="input-area__button"></button>
+        <input class="input-area__input" id="search_input" type="text" placeholder="Поиск" name="searchTarget">
+    </form>
+</div>

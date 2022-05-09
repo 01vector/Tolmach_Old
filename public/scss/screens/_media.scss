@@ -1,0 +1,30 @@
+// Media Queries
+@import "./_mobile.scss";
+
+@mixin media($size) {
+    @if $size == xs {
+      @media (max-width: 900px) {
+        @include for-mobile;
+      }
+    }
+
+    @else if $size == sm {
+      @media (min-width: 900px) and (max-width: 999px) { @content; }
+    }
+
+    @else if $size == semi-md {
+        @media (min-width: 1000px) and (max-width: 1299px) { @content; }
+      }
+
+    @else if $size == md {
+      @media (min-width: 1300px) and (max-width: 1799px) { @content; }
+    }
+
+    @else if $size == lg {
+      @media (min-width: 1800px) and (max-width: 2199px) { @content; }
+    }
+
+    @else if $size == ex-lg {
+        @media (min-width: 2200px) and (max-width: 2599px) { @content; }
+    }
+  }

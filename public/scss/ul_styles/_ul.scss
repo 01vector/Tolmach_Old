@@ -1,0 +1,40 @@
+@mixin ul-style($li-margins, $p-color, $span-weight, $marker : false, $underline : false, $marker-style: "-", $marker-left-pos: 6px) {
+    ul {
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-bottom: 5px;
+    
+        li {
+            margin-bottom: $li-margins;
+
+            position: relative;
+
+            list-style-type: none;
+        
+            p {
+                margin-left: 15px;
+                margin-top: 5px;
+                text-align: left;
+                color: $p-color;
+            }
+
+            span {
+                font-weight: $span-weight;
+
+                @if $underline == true {
+                    text-decoration: underline solid #58575784;
+                }
+            }
+        }
+
+        @if $marker == true {
+            li::before {
+                content: $marker-style;
+                margin-right: $marker-left-pos;
+
+                position: absolute;
+                top: 3px;
+            }
+        }
+    }
+}

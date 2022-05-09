@@ -1,0 +1,46 @@
+/* !!! СМЕНИТЬ НА ДЕФОЛТНЫЕ ЗНАЧЕНИЯ */
+
+    $f-family: 'Raleway', sans-serif;   $f-size: 12pt;
+    $f-weight: 400;                     $f-style: normal;
+    $f-stretch: normal;                 $f-variant: normal;
+    $f-color: #000000;                $f-line-height: normal;
+
+// Set properties
+@mixin fontProps($f-fam, $f-sz, $f-w, $f-stl, $f-str, $f-v, $f-clr, $f-l-heigh) {
+    font-family: $f-fam;   
+    font-size: $f-sz;
+    font-weight: $f-w;                     
+    font-style: $f-stl;
+    font-stretch: $f-str;                 
+    font-variant: $f-v;
+    color: $f-clr;
+    line-height: $f-l-heigh;
+};
+// ======================================
+
+* {
+    @include fontProps($f-family, $f-size, $f-weight, $f-style, $f-stretch, $f-variant, $f-color, $f-line-height);
+}
+
+h3 {
+    @include fontProps($f-family, 11pt, 600, $f-style, $f-stretch, $f-variant, #312783, $f-line-height); 
+}
+
+h2 {
+    @include fontProps($f-family, 25pt, 800, $f-style, $f-stretch, $f-variant, $f-color, $f-line-height);
+}
+
+.random-word__link {
+    @include fontProps($f-family, 10pt, 400, $f-style, $f-stretch, $f-variant, #58575792, $f-line-height);
+}
+
+.collocation-area {
+    p {
+        @include fontProps($f-family, $f-size, $f-weight, $f-style, $f-stretch, $f-variant, $f-color, 1.3);
+    }
+}
+
+
+
+
+

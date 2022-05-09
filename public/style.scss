@@ -1,0 +1,462 @@
+@import "./scss/reset/_reset.scss";
+@import "./scss/menu/_menu.scss";
+@import "./scss/fonts/_fonts.scss";
+@import "./scss/screens/_media.scss";
+@import "./scss/ul_styles/_ul.scss";
+@import "./scss/links/_links.scss";
+
+// ==================================== 
+
+/* ========================-> General content styles <-========================== */
+
+.content-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.content-container {
+    position: relative;
+}
+
+.left-container {
+    border-right: 1px solid rgba(128, 128, 128, 0.454);
+
+    width: 55vw;    height: 100vh;
+
+    overflow: scroll;
+    background-color: rgb(255, 255, 255);
+}
+
+.right-container {
+    width: 45vw;    height: 100vh;
+
+    overflow: scroll;
+    direction: rtl;
+    
+    background-color: rgb(255, 255, 255);
+}
+
+/* =======================-> Sidebar Menu styles <-========================== */
+
+//refactor
+
+.sidebar-btn {
+    position: absolute;
+    z-index: 2000;
+    left: 25px;
+    top: 10px;
+
+    padding: 10px;
+
+    width: 35px;
+    height: 35px;
+
+    transition: left, 100ms;
+
+    .sidebar-btn__button {
+        position: relative;
+        outline: none;
+        border: none;
+        background: url('/img/menu.png') no-repeat center;
+        width: 30px;
+        height: 30px;
+        background-size: 25px 25px;
+        background-position: left top;
+        transition: scale, 100ms;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:hover:not(.sidebar-btn__button_scaled) {
+            transform: scale(1.175);
+        }
+    }
+
+    .sidebar-btn__button_scaled {
+        transform: scale(1.2);
+    }
+}
+
+.icon-block {   
+    margin-top: 27px;
+}
+
+.icon-block__icon {
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 35px;
+}
+
+.icon-container-top {
+    margin-top: 10vh;
+    margin-bottom: 45vh;
+    padding-left: 0;
+    
+    text-align: center;
+}
+
+.icon-container-bot {
+    padding-left: 0;
+    text-align: center;
+}
+
+.icon-box {
+    padding: 10px;
+
+    background: linear-gradient(45deg, rgba(162,158,200, 0) -100%, rgba(148,187,233,0) 50%);
+    transition: all .4s ease-in-out;
+}
+
+/* =======================-> Left container styles <-========================== */
+
+            /* Main word's area (translate and transcription) */
+.trans-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+
+    margin-left: 5%;    margin-top: 50px;
+    padding: 5px;
+    
+    width: 85%;
+
+    .trans-area__word {
+        background-color: white;
+    }
+
+    .trans-area__button {
+        width: 20px;
+    }
+
+    .main-word-btn {
+        margin-top: 5px;    margin-left: 3px;
+
+        width: 15px;
+
+        transition-property: transform;
+        transition-duration: 175ms;
+    }
+}
+
+.translate-line {
+    margin-left: 5%;
+    padding-right: 10px;
+
+    p{
+        color: #585757;
+    }
+}
+
+.transcription-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+
+    margin-left: 30px;   margin-bottom: 10px;
+    padding: 5px;
+
+    .usa-transcription {
+        padding: 5px;
+        padding-left: 0px;
+        
+        p {
+            color: #312b80;
+        }
+    }
+
+    .brit-transcription {
+        margin-left: 7px;
+        padding: 5px;
+        padding-left: 0px;
+
+        p {
+            color: #c20d19;
+        }
+    }
+}
+
+.header-container {
+    position: relative;
+
+    padding-left: 23vw;
+    padding-top: 2.1vh;
+
+    h1 {
+        font-weight:700;
+        font-size: 40px;
+        color: white;
+    }
+}
+
+.header-left {
+    position: fixed;
+    height: 0;
+    width: 55vw;
+
+    transition: height 175ms linear;
+}
+
+.header-right {
+    position: fixed;
+    height: 0;
+    width: 45vw;
+
+    transition: height 175ms linear;
+}
+
+.fix {
+    height: 10.5vh;
+    background-color: #595298;
+    z-index: 1;
+}
+
+            /* The forms of the word area */
+
+.word-forms-area {
+    margin-left: 5%;    margin-top: 20px;
+    padding: 5px;
+
+    width: 85%;
+
+    background-color: rgb(255, 255, 255);
+
+    h3 {
+        margin-bottom: 7px;
+    }
+
+    p {
+        margin-bottom: 2px;
+
+        color: #585757;
+    }
+}
+
+            /* Meanings of the word */
+
+.word-meaning-area {
+    margin-left: 5%;    margin-top: 20px;   margin-bottom: 20px;
+    padding: 5px;
+
+    width: 85%;
+
+    background-color: rgb(255, 255, 255);
+
+    h3 {
+        margin-bottom: 5px;
+    }
+
+    @include ul-style(5px, #585757, 600, true);
+
+    a {
+        @include link;
+    }
+}
+
+.word-meaning-area__item_close {
+    display: none;
+}
+
+.word-meaning-area :nth-last-child(2) {
+    margin-bottom: 5px;
+}
+
+/* =======================-> Right container styles <-========================== */
+
+.input-area {
+    position: absolute;
+    right: 25px;    top: -10px;
+
+    margin-top: 20px;
+    padding: 5px;
+
+    z-index: 2;
+
+    .input-area__button {
+        direction: rtl;
+
+        position: absolute;
+        right: 2.2%;
+        top: 4%;     
+        z-index: 1;   
+
+        border: none;
+
+        width: 40px;
+        height: 40px;
+
+        background: url("/src/assets/images/icons/—Pngtree—search\ icon_4699282.png") no-repeat center;
+        background-size: 25px 25px;
+
+        transition-property: transform;
+        transition-duration: 175ms;
+    }
+
+    @include media(sm) {
+        right: 0.5%;
+    }
+}
+
+.input-area__input {
+    direction: ltr;
+
+    margin-right: 5%;
+    padding: 5px;
+    padding-left: 10px;
+    border: 1px solid #5857572d;
+    border-left: 7px solid #a09f9f;
+    border-radius: 5px;
+
+    width: 250px;
+    height: 20px;
+
+    outline: none;
+
+    transition-property: width, height, border, border-left, transform;
+    transition-duration: 200ms;
+}
+
+.random-word-container {
+    position: absolute;
+    right: 315px;
+    top: 22.5px;
+
+    z-index: 2;
+
+    .random-word {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .random-word__link {
+        display: block;
+
+        margin-right: 5px;
+
+        text-decoration: none;
+
+        transition: color, 200ms;
+
+        @media only screen and (max-width: 1200px) {
+            margin-right: 18px;
+            border-bottom: 1px dotted;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        right: 2%;
+        top: 50px;
+    }
+}
+
+.collocation-area {
+    direction: ltr;
+
+    margin-right: 5%;    margin-top: 80px;
+    padding: 5px;   padding-bottom: 5px;
+
+    width: 85%;
+
+    background-color: rgb(255, 255, 255);
+
+    h3 {
+        margin-bottom: 15px;
+    }
+
+    @include ul-style(20px, #585757, 600, false, true);
+
+    a {
+        @include link;
+
+        transition-property: color, border-bottom-color;
+        transition-duration: 200ms;
+    }
+
+    @include media(sm) {
+        margin-top: 90px;
+    }
+}
+
+.video-area {
+    margin-right: 14%;    margin-top: 40px;
+    padding: 5px;
+
+    height: 250px;   width: 440px;
+
+    background-color: rgb(255, 255, 255);
+
+    @include media(sm) {
+        margin-top: 25px;
+
+        height: 169px;   
+        width: 225px;
+    }
+    @include media(semi-md) {
+        margin-top: 25px;
+
+        height: 170px;   
+        width: 300px;
+    }
+    @include media(md) {
+        height:200px;   
+        width: 390px;
+    }
+    @include media(lg) {
+        width: 575px;
+        height: 340px;
+    }
+    @include media(ex-lg) {
+        width: 730px;
+        height: 400px;
+    }
+}
+
+.active {
+    background: rgb(162,158,200);
+    background: linear-gradient(45deg, rgba(162,158,200,1) -100%, rgba(148,187,233,0) 50%);
+    background-color: #ebebebfa;
+}
+/* =======================-> Pseudo <-========================== */
+
+input:focus {
+    border: 1px solid #58575792;
+    border-left: 12px solid #595298;
+
+    transform: scale(1.025);
+
+    //width: 260px;
+    //height: 21px;
+}
+
+a:hover {
+    color: #c20d19;
+    border-bottom-color: #c20d19;
+}
+
+.input-area__button:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.main-word-btn:hover {
+    transform: scale(1.2);
+}
+
+.random-word__link:hover {
+    color: #595298;
+}
+
+.icon-box:hover {
+    background: linear-gradient(45deg, rgba(162,158,200,1) -100%, rgba(148,187,233,0) 50%);
+}
+
+/* =======================-> Media <-========================== */
+
+@include media(xs);

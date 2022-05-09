@@ -1,0 +1,27 @@
+@mixin menu_area_options($bg_color) {
+    background-color: $bg_color;
+}
+
+
+.menu {
+    position: absolute;
+
+    min-height: 100vh;
+
+    width: 0px;
+    height: 100vh;
+
+    transition: width 75ms linear;
+
+    @include menu_area_options(#ebebeb);
+
+    .dark-theme {
+        @include menu_area_options(#220707);
+    }
+}
+
+.sidebar-on {
+    width: 90px;
+    z-index: 1000;
+    box-shadow: -3px 0px 10px;
+}

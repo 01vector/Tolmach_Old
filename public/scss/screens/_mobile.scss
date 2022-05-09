@@ -1,0 +1,81 @@
+@mixin for-mobile {
+    * {
+        overflow: auto;
+    }
+
+    .content-area {
+        flex-direction: column;
+    }
+    
+    .left-container {
+        border-right: none;
+    
+        width: auto;
+        height: auto;
+    }
+    
+    .trans-area {
+        margin-top: 80px;
+        padding-left: 5px;
+    }
+
+    .translate-line {
+        padding-left: 5px;
+    }
+    
+    .transcription-area {
+        margin-left: 5%;
+        padding-left: 5px;
+
+        .usa-transcription {
+            padding-top: 0px;
+        }
+
+        .brit-transcription {
+            padding-top: 0px;
+        }
+    }
+    
+    .word-meaning-area {
+        @include ul-style(3px, #585757, 400, true)
+    }
+    
+    /* ================================ right container ============================== */
+
+    .right-container {
+        direction: ltr;
+
+        width: auto;
+        height: auto;
+    }
+
+    .collocation-area {
+        margin-left: 5%;
+        margin-top: 20px;
+    }
+
+    .input-area__input {
+        margin-right: 0px;
+
+        width: 180px;
+    }
+
+    .random-word-container {
+        right: 1%;
+    }
+
+    .input-area {
+        margin-right: -5%;
+    }
+
+    .video-area {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        width: 280px;
+        height: 150px;
+
+        overflow: hidden;
+    }
+}
+

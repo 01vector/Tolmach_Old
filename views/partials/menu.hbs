@@ -1,0 +1,125 @@
+<div class="sidebar-btn" id="sidebarBtnBlock">
+    <button id="showMenu" class="sidebar-btn__button"></button>
+</div>
+
+<nav>
+    <div class="menu">
+            <ul class="icon-container-top">
+                {{#if isIndex}}
+                <li>
+                    <a href="/">
+                        <div class="icon-box active">
+                            <img class="icon-block__icon" src="/img/icon_book.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/list">
+                        <div class="icon-box">
+                            <img class="icon-block__icon" src="/img/icon_list.png" alt="">
+                        </div> 
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="icon-container-bot">
+                <li>
+                    <a href="/profile">
+                        <div class="icon-box">
+                            <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <div class="icon-box">
+                        <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-box">
+                        <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                    </div>
+                </li>
+                {{/if}}
+
+                {{#if isList}}
+                <li>
+                    <a href="/">
+                        <div class="icon-box">
+                            <img class="icon-block__icon" src="/img/icon_book.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/list">
+                    <div class="active">
+                        <img class="icon-block__icon" src="/img/icon_list.png" alt="">
+                    </div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="icon-container-bot">
+                <li>
+                    <a href="/profile">
+                        <div class="icon-box">
+                            <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <div class="icon-box">
+                        <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-box">
+                        <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                    </div> 
+                </li>
+                {{/if}}
+
+                {{#if isProfile}}
+                <li>
+                    <a href="/">
+                        <div class="icon-box">
+                            <img class="icon-block__icon" src="/img/icon_book.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/list">
+                        <div class="icon-box">
+                            <img class="icon-block__icon" src="/img/icon_list.png" alt="">
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+            <ul class="icon-container-bot">
+                <li>
+                    <a href="/profile">
+                        <div class="icon-box active">
+                            <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <div class="icon-box">
+                        <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                    </div>
+                </li>
+                <li>
+                    <div class="icon-box">
+                        <img class="icon-block__icon" src="/img/icon_profile.png" alt="">
+                    </div>
+                </li>
+                {{/if}}
+                
+            </ul>
+
+
+            <div class="logo-block"><img src="#" alt=""></div>
+        </div>
+    </div>
+</nav>
